@@ -22,6 +22,7 @@ ARCHITECTURE tb OF and_x_tb IS
 
   SIGNAL i_a : STD_LOGIC;
   SIGNAL i_b : STD_LOGIC;
+  SIGNAL i_c : STD_LOGIC;
   SIGNAL o_y : STD_LOGIC;
 
 BEGIN
@@ -30,6 +31,7 @@ BEGIN
     PORT MAP (
       i_a => i_a,
       i_b => i_b,
+      i_c => i_c,
       o_y => o_y);
 
   main : PROCESS
@@ -41,6 +43,7 @@ BEGIN
         info("Test: a = 0, b = 0");
         i_a <= '0';
         i_b <= '0';
+        i_c <= '0';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '0', "Check Y == 0");
       END IF;
@@ -49,6 +52,7 @@ BEGIN
         info("Test: a = 1, b = 0");
         i_a <= '1';
         i_b <= '0';
+        i_c <= '0';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '0', "Check Y == 0");
       END IF;
@@ -57,6 +61,7 @@ BEGIN
         info("Test: a = 0, b = 1");
         i_a <= '0';
         i_b <= '1';
+        i_c <= '0';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '0', "Check Y == 0");
       END IF;
@@ -65,6 +70,7 @@ BEGIN
         info("Test: a = 1, b = 1");
         i_a <= '1';
         i_b <= '1';
+        i_c <= '1';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '1', "Check Y == 1");
       END IF;
