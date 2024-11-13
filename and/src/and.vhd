@@ -36,12 +36,13 @@ ENTITY and_x IS
   PORT (
     i_a : IN    STD_LOGIC;
     i_b : IN    STD_LOGIC;
+    i_c : IN    STD_LOGIC;
     o_y : OUT   STD_LOGIC);
 END ENTITY and_x;
 
 ARCHITECTURE rtl OF and_x IS
 BEGIN
 
-  o_y <= i_a AND i_b;
+  o_y <= i_a AND i_b and i_c;
 
 END ARCHITECTURE rtl;
