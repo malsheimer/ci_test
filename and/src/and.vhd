@@ -37,12 +37,13 @@ ENTITY and_x IS
     i_a : IN    STD_LOGIC;
     i_b : IN    STD_LOGIC;
     i_c : IN    STD_LOGIC;
+    i_d : IN    STD_LOGIC;
     o_y : OUT   STD_LOGIC);
 END ENTITY and_x;
 
 ARCHITECTURE rtl OF and_x IS
 BEGIN
 
-  o_y <= i_a AND i_b and i_c;
+  o_y <= i_a AND i_b AND i_c AND i_d;
 
 END ARCHITECTURE rtl;
