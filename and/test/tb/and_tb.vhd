@@ -23,6 +23,7 @@ ARCHITECTURE tb OF and_x_tb IS
   SIGNAL i_a : STD_LOGIC;
   SIGNAL i_b : STD_LOGIC;
   SIGNAL i_c : STD_LOGIC;
+  SIGNAL i_d : STD_LOGIC;
   SIGNAL o_y : STD_LOGIC;
 
 BEGIN
@@ -32,6 +33,7 @@ BEGIN
       i_a => i_a,
       i_b => i_b,
       i_c => i_c,
+      i_d => i_d,
       o_y => o_y);
 
   main : PROCESS
@@ -40,37 +42,41 @@ BEGIN
     WHILE test_suite LOOP
 
       IF run("test_00") THEN
-        info("Test: a = 0, b = 0");
+        info("Test: a = 0, b = 0, c = 0, d = 0");
         i_a <= '0';
         i_b <= '0';
         i_c <= '0';
+        i_d <= '0';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '0', "Check Y == 0");
       END IF;
 
       IF run("test_01") THEN
-        info("Test: a = 1, b = 0");
+        info("Test: a = 1, b = 0, c = 0, d = 0");
         i_a <= '1';
         i_b <= '0';
         i_c <= '0';
+        i_d <= '0';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '0', "Check Y == 0");
       END IF;
 
       IF run("test_10") THEN
-        info("Test: a = 0, b = 1");
+        info("Test: a = 0, b = 1, c = 0, d = 0");
         i_a <= '0';
         i_b <= '1';
         i_c <= '0';
+        i_d <= '0';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '0', "Check Y == 0");
       END IF;
 
       IF run("test_11") THEN
-        info("Test: a = 1, b = 1");
+        info("Test: a = 1, b = 1, c = 1, d = 1");
         i_a <= '1';
         i_b <= '1';
         i_c <= '1';
+        i_d <= '1';
         WAIT FOR 1 ns;
         check(tb_checker, o_y = '1', "Check Y == 1");
       END IF;
