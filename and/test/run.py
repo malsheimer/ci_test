@@ -4,7 +4,7 @@ VUnit Test Project
 from pathlib import Path
 from vunit import VUnit
 
-VU = VUnit.from_argv(compile_builtins=False)
+VU = VUnit.from_argv()
 VU.add_vhdl_builtins()
 
 SRC_PATH = Path(__file__).parent / ".."
